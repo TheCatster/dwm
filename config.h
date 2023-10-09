@@ -20,8 +20,8 @@ static const int showsystray             = 1;   /* 0 means no systray */
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
-static const char *fonts[]               = { "JuliaMono:size=11", "Noto Color Emoji:pixelsize=11:antialias=true:autohint=true" };
-static const char dmenufont[]            = "JuliaMono:size=11";
+static const char *fonts[]               = { "JetBrainsMono Nerd Font:size=18", "Noto Color Emoji:pixelsize=18:antialias=true:autohint=true" };
+static const char dmenufont[]            = "JetBrainsMono Nerd Font:size=18";
 
 static char normfgcolor[]                = "#c6d4e4";
 static char normbgcolor[]                = "#0c0b0c";
@@ -77,8 +77,8 @@ static char *colors[][ColCount] = {
   [SchemeUrg]          = { urgfgcolor,       urgbgcolor,       urgbordercolor,       urgfloatcolor },
 };
 
-const char *spcmd1[] = {"st", "-n", "spterm", "-f", "JuliaMono:size=10", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "JuliaMono:size=14", "-g", "50x20", "-e", "bb", NULL };
+const char *spcmd1[] = {"st", "-n", "spterm", "-f", "JetBrainsMono Nerd Font:size=10", "-g", "120x34", NULL };
+const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "JetBrainsMono Nerd Font:size=14", "-g", "50x20", "-e", "bb", NULL };
 static Sp scratchpads[] = {
   /* name          cmd  */
   {"spterm",      spcmd1},
@@ -179,8 +179,8 @@ static Key keys[] = {
   { MODKEY|ShiftMask,   XK_minus, spawn,    SHCMD("pamixer -d 15; kill -44 $(pidof dwmblocks)") },
   { MODKEY,     XK_equal, spawn,    SHCMD("pamixer -i 5; kill -44 $(pidof dwmblocks)") },
   { MODKEY|ShiftMask,   XK_equal, spawn,    SHCMD("pamixer -i 15; kill -44 $(pidof dwmblocks)") },
-  { MODKEY,     XK_BackSpace, spawn,    SHCMD("sysact") },
-  { MODKEY|ShiftMask,   XK_BackSpace, spawn,    SHCMD("sysact") },
+  { MODKEY,     XK_BackSpace, spawn,    SHCMD("rofi -show p -modi p:rofi-power-menu") },
+  { MODKEY|ShiftMask,   XK_BackSpace, spawn,    SHCMD("rofi -show p -modi p:rofi-power-menu") },
 
   { MODKEY,     XK_Tab,   view,   {0} },
   { MODKEY,     XK_q,   killclient, {0} },
